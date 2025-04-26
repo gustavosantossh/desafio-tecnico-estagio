@@ -14,7 +14,7 @@
                     <form action="{{route('dashboard.update', $taskEditId)}}" method="POST">
                         @csrf
                         @method("PATCH")
-                        
+
                         <div class="">
                             <label for="title">Titulo: </label>
                             <input class="form-control" type="text" value="{{$title}}" name="title" id="title" required>
@@ -28,8 +28,8 @@
                         <div class="">
                             <label for="status">Status: </label>
                             <select class="form-select" name="status" id="status">
-                                <option value="{{App\Enums\TaskStatusEnum::PENDENTE}}">{{App\Enums\TaskStatusEnum::PENDENTE}}</option>
-                                <option value="{{App\Enums\TaskStatusEnum::CONCLUIDA}}">{{App\Enums\TaskStatusEnum::CONCLUIDA}}</option>
+                                <option value="{{App\Enums\TaskStatusEnum::PENDENTE}}" {{ $status == App\Enums\TaskStatusEnum::PENDENTE ? 'selected': '' }}>{{App\Enums\TaskStatusEnum::PENDENTE}}</option>
+                                <option value="{{App\Enums\TaskStatusEnum::CONCLUIDA}}" {{ $status == App\Enums\TaskStatusEnum::CONCLUIDA ? 'selected': '' }}>{{App\Enums\TaskStatusEnum::CONCLUIDA}}</option>
                             </select>
                         </div>
 
