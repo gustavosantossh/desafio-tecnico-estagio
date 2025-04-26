@@ -13,9 +13,14 @@ class Dashboard extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $tasks = Auth::user()->tasks()->paginate(10);
+        $status = $request->status;
+
+        $tasks =  Auth::user()->tasks()->paginate(10);
+
+        if ($status) $tasks = Auth::user()->tasks()->where('status', $status)->paginate(10);
+
         return view('dashboard', compact('tasks'));
     }
 

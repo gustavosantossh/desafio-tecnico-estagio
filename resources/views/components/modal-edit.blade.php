@@ -14,8 +14,7 @@
                     <form action="{{route('dashboard.update', $taskEditId)}}" method="POST">
                         @csrf
                         @method("PATCH")
-
-                        {{$taskEditId}}
+                        
                         <div class="">
                             <label for="title">Titulo: </label>
                             <input class="form-control" type="text" value="{{$title}}" name="title" id="title" required>

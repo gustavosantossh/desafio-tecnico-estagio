@@ -7,8 +7,22 @@
 
     <div class="container py-12">
 
-        <button type="button" class="btn btn-success my-2" data-bs-toggle="modal" data-bs-target="#modalCreate">CRIAR</button>
-        <x-modal-create />
+        <div class="d-flex justify-between">
+            <div>
+                <button type="button" class="btn btn-success my-2" data-bs-toggle="modal" data-bs-target="#modalCreate">CRIAR</button>
+                <x-modal-create />
+            </div>
+
+            <div class="">
+                <form action="{{route('dashboard.index')}}" method="GET" id="filter">
+                    <select class="form-select" name="status" id="status" onchange="document.getElementById('filter').submit()">
+                        <option value=""></option>
+                        <option value="pendente" {{ request('status') == 'pendente' ? 'selected' : '' }} >Pendente</option>
+                        <option value="concluida"{{ request('status') == 'concluida' ? 'selected' : '' }} >Concluida</option>
+                    </select>
+                </form>
+            </div>
+        </div>
 
         <div class="row">
             @foreach ($tasks as $task)
