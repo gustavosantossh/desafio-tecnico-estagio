@@ -32,6 +32,8 @@
 
 - Rode `php artisan serve`
 
+- Abra o navegador e digite `http://127.0.0.1:8000`
+
 ````
 cd desafio-tecnico-estagio &&
 cp .env.example .env &&
@@ -39,3 +41,4 @@ php artisan key:generate &&
 php artisan migrate &&
 php artisan serve
 ````
+![app-home-laravel](https://github.com/user-attachments/assets/828580eb-e25a-4b5d-bdd2-39a5d9ef389d)
